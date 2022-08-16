@@ -9,20 +9,22 @@ $name = filter_input(INPUT_POST, 'name');
 $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 
 if ($name && $email) {
-    if($usuarioDao -> findByEmail(($email) === false)){
+    if(($usuarioDao -> findByEmail($email)) === false){
         $novoUsuario = new Usuario();
         $novoUsuario->setNome($name);
         $novoUsuario->setEmail($email);
 
-        $usuarioDao -> add( $novoUsuario ); // Add to the user database
+        $usuarioDao -> add($novoUsuario); // Add to the user database
 
         header("Location: index.php");
         exit;
     } else {
+        echo 'aqui 1';
         header("Location: adicionar.php");
         exit;
     }
 } else {
+    echo 'aqui 2';
     header("Location: adicionar.php"); 
     exit;
 }

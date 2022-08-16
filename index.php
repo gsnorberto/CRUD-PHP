@@ -23,8 +23,8 @@ $lista = $usuarioDao -> findAll();
             <td><?= $usuario->getNome() ?></td>
             <td><?= $usuario->getEmail() ?></td>
             <td>
-                <a href="editar.php?id=<?= $usuario->getId(); ?>">[ Editar ]</a>
-                <a href="excluir.php?id=<?= $usuario->getId(); ?>" onclick="return confirm('Tem certeza que deseja excluir?')">[ Excluir ]</a>
+                <a href="editar.php?id=<?=$usuario->getId();?>">[ Editar ]</a>
+                <a href="excluir.php?id=<?=$usuario->getId();?>" onclick="return confirm('Tem certeza que deseja excluir?')">[ Excluir ]</a>
             </td>
         </tr>
     <?php endforeach;?>

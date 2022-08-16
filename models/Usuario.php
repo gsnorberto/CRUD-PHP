@@ -2,8 +2,8 @@
 
 class Usuario {
     private $id;
-    private $nome;
-    private $email;
+    private $nome = '';
+    private $email = '';
 
     public function getId (){
         return $this->id;
